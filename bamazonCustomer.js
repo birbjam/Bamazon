@@ -32,5 +32,11 @@ function start() {
 }
 
 function showItems() {
-    break
+    connection.query('SELECT * FROM items', function(err, res) {
+        if (err) throw err;
+
+        for(var i = 0; i < res.length; i++){
+        console.log("ID " + res[i].id + " | " + "Product: " + res[i].item_name + " | " + "Category" + res[i].category + " | ")
+        }
+    })
 }
