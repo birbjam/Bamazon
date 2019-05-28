@@ -35,8 +35,11 @@ function showItems() {
     connection.query('SELECT * FROM items', function(err, res) {
         if (err) throw err;
 
+        console.log("Existing Inventory: ");
+
         for(var i = 0; i < res.length; i++){
-        console.log("ID " + res[i].id + " | " + "Product: " + res[i].item_name + " | " + "Category" + res[i].category + " | ")
+        console.log("---------------------------------------------------------------------------------")
+        console.log("ID " + res[i].id + " | " + "Product: " + res[i].item_name + " | " + "Category: " + res[i].category + " | " + "Qty: " + res[i].quantity + " | " + "Price: " + res[i].price)
         }
     })
 }
