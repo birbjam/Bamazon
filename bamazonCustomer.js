@@ -40,7 +40,7 @@ function showItems() {
 
         for(var i = 0; i < res.length; i++){
         console.log("---------------------------------------------------------------------------------")
-        console.log("ID ".green + res[i].id + " | " + "Product: ".green + res[i].item_name + " | " + "Category: ".green + res[i].category + " | " + "Qty: ".green + res[i].quantity + " | " + "Price: ".green + res[i].price)
+        console.log("ID ".green + res[i].id + " | " + "Product: ".green + res[i].item_name + " | " + "Category: ".green + res[i].category + " | " + "Qty: ".green + res[i].quantity + " | " + "Price: ".green + "$" + res[i].price)
         console.log("---------------------------------------------------------------------------------");
         }
         userPurchase();
@@ -82,7 +82,7 @@ function userPurchase() {
                     connection.query(updateQueryDB, function(err, data) {
                         if(err) throw err;
 
-                        console.log('You order has been placed! The total is: $' + itemData.price * inputQuantity);
+                        console.log('You order has been placed! \nThe total is: $' + itemData.price * inputQuantity);
                         exit();
                     })
                 } else {
