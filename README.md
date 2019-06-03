@@ -7,3 +7,4 @@ A basic storefront CLI application that uses mySQL to store/edit inventory items
 - JavaScript
 - MySQL
 - Inquirer
+- npm colors
