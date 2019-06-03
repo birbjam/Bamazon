@@ -82,7 +82,7 @@ function userPurchase() {
                         if(err) throw err;
 
                         console.log('You order has been placed! The total is: $' + itemData.price * inputQuantity);
-                        connection.end();
+                        exit();
                     })
                 } else {
                     console.log('Not enough items in stock, please modify your order.');
@@ -91,4 +91,21 @@ function userPurchase() {
             }
         })
     })
+}
+
+function exit() {
+  inquirer
+    .prompt({
+      name: "goodbye",
+      type: "list",
+      message: "Would you like to buy anything else?",
+      choices: ["YES", "EXIT"]
+    })
+    .then(function(answer) {
+      if (answer.goodbye === "YES") {
+        showItems();
+      } else {
+        connection.end();
+      }
+    });
 }
