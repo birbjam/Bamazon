@@ -7,7 +7,7 @@ A basic storefront CLI application that uses mySQL to store/edit inventory items
 - Once an item is selected, the user will be prompted to select the quantity of the item.
 - Once the quantity is selected, it will be subtracted from the current quantity of that item.
 
-![bamazon](https://i.makeagif.com/media/6-03-2019/9YF2Hd.gif)
+![bamazon](https://makeagif.com/i/9YF2Hd)
 
 - If a user selects a quantity that is over what is available, the application will prompt the user to try again.
 
